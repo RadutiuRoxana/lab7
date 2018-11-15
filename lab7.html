@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<script>
+		var a = 1; 
+		function b() {
+			a = 10; 
+			return function a() {} //HINT: local scope
+		}
+		b(); 
+		console.log("Ex 1");
+		console.log("a=" + a);
+
+		console.log("\nEx 2");
+		for (var i = 0; i < 5; i++) { 
+			setTimeout((function() {console.log(i); }) (), i * 1000 );
+		}
+
+		console.log("\nEx 3");
+		try { 
+			setTimeout(function() {
+				try {
+					throw new Error('example');
+				}
+				catch (err) {
+					console.log(err);
+				}}, 1000);
+			
+		} 
+		catch (err) {
+			console.log(err);
+		}
+		
+		console.log("\nEx 4");
+		
+	</script>
+
+</body>
+</html>
